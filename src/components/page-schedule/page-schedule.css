@@ -1,0 +1,64 @@
+page-schedule ion-fab-button {
+  --background: var(--ion-color-step-150, #fff);
+  --background-hover: var(--ion-color-step-200, #f2f2f2);
+  --background-focused: var(--ion-color-step-250, #d9d9d9);
+
+  --color: var(--ion-color-primary, #3880ff);
+}
+
+/*
+ * Material Design uses the ripple for activated
+ * so only style the iOS activated background
+ */
+.ios page-schedule ion-fab-button {
+  --background-activated: var(--ion-color-step-250, #d9d9d9);
+}
+
+/*
+ * Schedule item border colors
+ */
+
+page-schedule .item-sliding-track ion-label {
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+}
+
+page-schedule .item-sliding-track-ionic ion-label {
+  border-left-color: var(--ion-color-primary);
+}
+
+page-schedule .item-sliding-track-angular ion-label {
+  border-left-color: var(--ion-color-angular);
+}
+
+page-schedule .item-sliding-track-communication ion-label {
+  border-left-color: var(--ion-color-communication);
+}
+
+page-schedule .item-sliding-track-tooling ion-label {
+  border-left-color: var(--ion-color-tooling);
+}
+
+page-schedule .item-sliding-track-services ion-label {
+  border-left-color: var(--ion-color-services);
+}
+
+page-schedule .item-sliding-track-design ion-label {
+  border-left-color: var(--ion-color-design);
+}
+
+page-schedule .item-sliding-track-workshop ion-label {
+  border-left-color: var(--ion-color-workshop);
+}
+
+page-schedule .item-sliding-track-food ion-label {
+  border-left-color: var(--ion-color-food);
+}
+
+page-schedule .item-sliding-track-documentation ion-label {
+  border-left-color: var(--ion-color-documentation);
+}
+
+page-schedule .item-sliding-track-navigation ion-label {
+  border-left-color: var(--ion-color-navigation);
+}

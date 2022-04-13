@@ -1,0 +1,44 @@
+{
+  "name": "ionic-stencil-conference-app",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Stencil App Starter",
+  "scripts": {
+    "lint": "eslint src/ --ext .js,.ts,.jsx,.tsx",
+    "lint.fix": "lint -- --fix",
+    "build": "stencil build --prerender",
+    "start": "stencil build --prod --watch --serve",
+    "serve": "stencil serve --root www",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "deploy": "npm run build && firebase deploy"
+  },
+  "dependencies": {
+    "@capacitor/core": "^3.4.3",
+    "@capacitor/ios": "^3.4.3",
+    "@capacitor/splash-screen": "^1.2.2",
+    "@ionic/core": "^5.9.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^3.4.3",
+    "@stencil/core": "^2.15.0",
+    "@types/jest": "^27.4.1",
+    "@types/puppeteer": "5.4.5",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "jest": "27.5.1",
+    "jest-cli": "27.5.1",
+    "puppeteer": "^13.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/stencil-app-starter.git"
+  },
+  "author": "Ionic Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ionic-team/stencil"
+  },
+  "homepage": "https://github.com/ionic-team/stencil"
+}

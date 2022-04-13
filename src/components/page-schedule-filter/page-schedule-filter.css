@@ -1,0 +1,33 @@
+/*
+ * Material Design
+ */
+
+ .md page-schedule-filter ion-toolbar ion-button {
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.md page-schedule-filter ion-checkbox {
+  --background-checked: transparent;
+  --border-color: transparent;
+  --border-color-checked: transparent;
+  --checkmark-color: var(--ion-color-primary);
+}
+
+.md page-schedule-filter ion-list {
+  background: inherit;
+}
+
+
+/*
+ * iOS
+ */
+
+.ios page-schedule-filter ion-list-header {
+  margin-top: 10px;
+}
+
+/* Important is required due to label being scoped */
+.ios page-schedule-filter ion-label {
+  color: var(--ion-color-primary) !important;
+}

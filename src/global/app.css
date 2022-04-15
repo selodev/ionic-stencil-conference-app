@@ -32,4 +32,4 @@
  * with CSS variables and custom themes.
  */
 
-@import "./theme/variables.css";
+@import "../theme/variables.css";

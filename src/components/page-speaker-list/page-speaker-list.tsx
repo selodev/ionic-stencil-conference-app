@@ -1,9 +1,7 @@
 import { Component, h } from '@stencil/core';
-import { Plugins } from '@capacitor/core';
+import { Browser } from '@capacitor/browser';
 
 import { ConferenceData } from '../../providers/conference-data';
-
-const { Browser } = Plugins;
 
 @Component({
   tag: 'page-speaker-list',

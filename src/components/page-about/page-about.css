@@ -88,3 +88,9 @@ page-about .about-info ion-icon {
 .ios page-about .about-info h3 {
   font-weight: 700;
 }
+.datetime-item {
+  --ripple-color: transparent;
+  --background-activated: transparent;
+  --background: white;
+  --background-hover: transparent;
+}

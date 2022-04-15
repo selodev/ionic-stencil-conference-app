@@ -1,13 +1,11 @@
-import { actionSheetController, getMode } from '@ionic/core';
-import { Component, Prop, h } from '@stencil/core';
-import { ConferenceData } from '../../providers/conference-data';
-import { Plugins } from '@capacitor/core';
-
-const { Browser } = Plugins;
+import { actionSheetController, getMode } from "@ionic/core";
+import { Component, Prop, h } from "@stencil/core";
+import { ConferenceData } from "../../providers/conference-data";
+import { Browser } from "@capacitor/browser";
 
 @Component({
-  tag: 'page-speaker-detail',
-  styleUrl: 'page-speaker-detail.css'
+  tag: "page-speaker-detail",
+  styleUrl: "page-speaker-detail.css",
 })
 export class PageSpeakerDetail {
   private speaker: any;
@@ -20,38 +18,38 @@ export class PageSpeakerDetail {
 
   openExternalUrl(url: string) {
     Browser.open({
-      url
+      url,
     });
   }
 
   async openSpeakerShare(speaker: any) {
     const actionSheet = await actionSheetController.create({
-      header: 'Share ' + speaker.name,
+      header: "Share " + speaker.name,
       buttons: [
         {
-          text: 'Copy Link',
+          text: "Copy Link",
           handler: () => {
             console.log(
-              'Copy link clicked on https://twitter.com/' + speaker.twitter
+              "Copy link clicked on https://twitter.com/" + speaker.twitter
             );
             if (
-              (window as any)['cordova'] &&
-              (window as any)['cordova'].plugins.clipboard
+              (window as any)["cordova"] &&
+              (window as any)["cordova"].plugins.clipboard
             ) {
-              (window as any)['cordova'].plugins.clipboard.copy(
-                'https://twitter.com/' + speaker.twitter
+              (window as any)["cordova"].plugins.clipboard.copy(
+                "https://twitter.com/" + speaker.twitter
               );
             }
-          }
+          },
         },
         {
-          text: 'Share via ...'
+          text: "Share via ...",
         },
         {
-          text: 'Cancel',
-          role: 'cancel'
-        }
-      ]
+          text: "Cancel",
+          role: "cancel",
+        },
+      ],
     });
 
     actionSheet.present();
@@ -61,23 +59,23 @@ export class PageSpeakerDetail {
     const mode = getMode();
 
     const actionSheet = await actionSheetController.create({
-      header: 'Contact ' + speaker.name,
+      header: "Contact " + speaker.name,
       buttons: [
         {
           text: `Email ( ${speaker.email} )`,
-          icon: mode !== 'ios' ? 'mail' : null,
+          icon: mode !== "ios" ? "mail" : null,
           handler: () => {
-            window.open('mailto:' + speaker.email);
-          }
+            window.open("mailto:" + speaker.email);
+          },
         },
         {
           text: `Call ( ${speaker.phone} )`,
-          icon: mode !== 'ios' ? 'call' : null,
+          icon: mode !== "ios" ? "call" : null,
           handler: () => {
-            window.open('tel:' + speaker.phone);
-          }
-        }
-      ]
+            window.open("tel:" + speaker.phone);
+          },
+        },
+      ],
     });
 
     actionSheet.present();
@@ -91,45 +89,70 @@ export class PageSpeakerDetail {
         <ion-header class="ion-no-border">
           <ion-toolbar>
             <ion-buttons slot="start">
-              <ion-back-button defaultHref="/speakers"></ion-back-button>
+              <ion-back-button
+                defaultHref="/speakers"
+              ></ion-back-button>
             </ion-buttons>
             <ion-buttons slot="end">
               <ion-button onClick={() => this.openContact(speaker)}>
-                <ion-icon slot="icon-only" ios="call-outline" md="call-sharp"></ion-icon>
+                <ion-icon
+                  slot="icon-only"
+                  ios="call-outline"
+                  md="call-sharp"
+                ></ion-icon>
               </ion-button>
               <ion-button onClick={() => this.openSpeakerShare(speaker)}>
-                <ion-icon slot="icon-only" ios="share-outline" md="share-sharp"></ion-icon>
+                <ion-icon
+                  slot="icon-only"
+                  ios="share-outline"
+                  md="share-sharp"
+                ></ion-icon>
               </ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
 
         <div class="speaker-background">
-          <img src={speaker.profilePic} alt={speaker.name}/>
+          <img src={speaker.profilePic} alt={speaker.name} />
           <h2>{speaker.name}</h2>
         </div>
 
         <div class="ion-padding speaker-detail">
           <p>{speaker.about} Say hello on social media!</p>
 
-          <hr/>
+          <hr />
 
-          <ion-chip color="twitter" onClick={() => this.openExternalUrl(`https://twitter.com/${speaker.twitter}`)}>
+          <ion-chip
+            color="twitter"
+            onClick={() =>
+              this.openExternalUrl(`https://twitter.com/${speaker.twitter}`)
+            }
+          >
             <ion-icon name="logo-twitter"></ion-icon>
             <ion-label>Twitter</ion-label>
           </ion-chip>
 
-          <ion-chip color="dark" onClick={() => this.openExternalUrl('https://github.com/ionic-team/ionic')}>
+          <ion-chip
+            color="dark"
+            onClick={() =>
+              this.openExternalUrl("https://github.com/ionic-team/ionic")
+            }
+          >
             <ion-icon name="logo-github"></ion-icon>
             <ion-label>GitHub</ion-label>
           </ion-chip>
 
-          <ion-chip color="instagram" onClick={() => this.openExternalUrl('https://instagram.com/ionicframework')}>
+          <ion-chip
+            color="instagram"
+            onClick={() =>
+              this.openExternalUrl("https://instagram.com/ionicframework")
+            }
+          >
             <ion-icon name="logo-instagram"></ion-icon>
             <ion-label>Instagram</ion-label>
           </ion-chip>
         </div>
-      </ion-content>
+      </ion-content>,
     ];
   }
 }

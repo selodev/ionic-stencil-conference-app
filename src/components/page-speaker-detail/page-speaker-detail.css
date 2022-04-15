@@ -10,13 +10,6 @@
   right: 0;
 
   --background: transparent;
-  --color: white;
-}
-
-page-speaker-detail ion-toolbar ion-button,
-page-speaker-detail ion-toolbar ion-back-button,
-page-speaker-detail ion-toolbar ion-menu-button {
-  --color: white;
 }
 
 page-speaker-detail .speaker-background {

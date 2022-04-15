@@ -14,10 +14,11 @@
     "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
+    "@capacitor/browser": "^1.0.7",
     "@capacitor/core": "^3.4.3",
     "@capacitor/ios": "^3.4.3",
     "@capacitor/splash-screen": "^1.2.2",
-    "@ionic/core": "^5.9.3"
+    "@ionic/core": "^6.1.1-dev.11649883188.15e1465b"
   },
   "devDependencies": {
     "@capacitor/cli": "^3.4.3",

@@ -139,13 +139,25 @@ export class PageAbout {
               </ion-select>
             </ion-item>
 
-            <ion-item class="datetime-item">
+            <ion-item class="datetime-item" button={true} id="open-date-input">
               <ion-label>Date</ion-label>
-              <ion-datetime
-                max="2056"
-                value={this.conferenceDate}
-                onIonChange={(ev) => this.datetimeChanged(ev)}
-              ></ion-datetime>
+              <ion-text slot="end">
+                {this.displayDate(this.conferenceDate, "MMM dd, yyyy")}
+              </ion-text>
+              <ion-popover
+                id="date-input-popover"
+                trigger="open-date-input"
+                showBackdrop={false}
+                side="top"
+                alignment="end"
+              >
+                <ion-datetime
+                  max="2056"
+                  value={this.conferenceDate}
+                  onIonChange={(ev) => this.datetimeChanged(ev)}
+                  presentation="date"
+                ></ion-datetime>
+              </ion-popover>
             </ion-item>
           </ion-list>
 
